@@ -59,12 +59,12 @@ const SwipeableCard = (): JSX.Element => {
   }
 
   const onSwipeRight = () => {
-    console.log('LIKE ❤️')
+    console.log('LIKE')
     removeTopCard()
   }
 
   const onSwipeLeft = () => {
-    console.log('NOPE ❌')
+    console.log('NOPE')
     removeTopCard()
   }
 
