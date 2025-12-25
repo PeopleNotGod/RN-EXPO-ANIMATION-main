@@ -19,14 +19,12 @@ import Animated, {
 const { width } = Dimensions.get('window')
 const SWIPE_THRESHOLD = width * 0.25
 
-/* ================= TYPE ================= */
 interface CardItem {
   id: number
   title: string
   image: any
 }
 
-/* ================= DATA ================= */
 const INITIAL_CARDS: CardItem[] = [
   {
     id: 1,
@@ -45,7 +43,6 @@ const INITIAL_CARDS: CardItem[] = [
   },
 ]
 
-/* ================= COMPONENT ================= */
 const SwipeableCard = (): JSX.Element => {
   const [cards, setCards] = useState<CardItem[]>(INITIAL_CARDS)
 
@@ -91,7 +88,6 @@ const SwipeableCard = (): JSX.Element => {
       }
     })
 
-  /* ================= ANIMATION ================= */
   const cardStyle = useAnimatedStyle(() => ({
     transform: [
       { translateX: translateX.value },
@@ -117,7 +113,6 @@ const SwipeableCard = (): JSX.Element => {
     ),
   }))
 
-  /* ================= RENDER ================= */
   return (
     <View style={styles.container}>
       {[...cards].reverse().map((item, index) => {
@@ -175,7 +170,6 @@ const SwipeableCard = (): JSX.Element => {
 
 export default SwipeableCard
 
-/* ================= STYLES ================= */
 const styles = StyleSheet.create({
   container: {
     height: 380,
